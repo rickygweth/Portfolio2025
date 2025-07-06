@@ -1,0 +1,32 @@
+body{
+     background: linear-gradient(to bottom, #3232ae, #4169E1); /* Navy to Royal Blue */
+}
+
+.container {
+      
+      background: rgba(36, 9, 126, 0.744);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(0, 0, 0, 0.76);
+      width: 1200px;
+      padding: 2rem;
+    }
+
+    .form-section {
+      color: white;
+      text-align: center;
+    }
+
+
+button {
+      padding: 10px 20px;
+      background-color: #ece7e76a;
+      color: #fcf7f7;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #140f0f;
+    }

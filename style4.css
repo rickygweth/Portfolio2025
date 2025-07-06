@@ -1,0 +1,119 @@
+body {
+  background: linear-gradient(to bottom, #3232ae, #4169E1); /* Navy to Royal Blue */
+}
+
+.container {
+  background: rgba(36, 9, 126, 0.744);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.76);
+  width: 1200px;
+  padding: 2rem;
+}
+
+.form-section {
+  color: white;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ece7e76a;
+  color: #fcf7f7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #140f0f;
+}
+
+header {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration-line: underline;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+}
+
+.img1, .img2, .img3, .bottom-img {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 30px 20px;
+  max-width: 250px;
+  margin: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.img1 {
+  transform: rotate(-90deg);
+}
+
+.img2,
+.img3 {
+  transform: rotate(90deg);
+}
+
+.bottom-img {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  transition: width 1s ease 1s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.img1:hover,
+.img2:hover,
+.img3:hover,
+.bottom-img:hover {
+  width: 400px;
+  transition: ease;
+  box-shadow: 0 12px 30px rgb(0, 0, 0);
+}
+
+h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fcf7f7;
+}
+
+/* 💡 New Description Box Styling */
+.certificate-description {
+  font-size: 1.1rem;
+  max-width: 600px;
+  text-align: center;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
