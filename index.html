@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="script.js"></script>
-    <title>Ricky G</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("your_user_ID"); // 🔁 Replace with your actual user ID
+    })();
+  </script>
+  <title>Ricky G</title>
 </head>
+
 <body>
 <div class="hamburger" onclick="toggleMenu()">
   <span></span>
@@ -66,6 +78,8 @@
 
             <i class="fa-brands fa-java fa-beat"></i>
 
+            <i class="fa-solid fa-database"></i>
+
             <i class="fa-brands fa-react"></i>
             </div>
 
@@ -115,65 +129,74 @@
     </div>
   </section>
 
-    <section>
-        <h4>contact me</h4>
-        <ul>
-            <h1>Get In Touch Today</h1>
-  <div class="container2">
-    <div class="form-section">
-      <h1>Contact Me</h1>
-      <form>
-        <div class="form-group">
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" placeholder="First Name">
+    <section class="section">
+    <h4>Contact Me</h4>
+    <ul>
+      <h1>Get In Touch Today</h1>
+      <div class="container2">
+        <div class="form-section">
+          <h1>Contact Me</h1>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="First Name" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Last Name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="Email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="Phone" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Your message" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" placeholder="Last Name">
-        </div>
-        <div class="form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" placeholder="Email" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="Phone">
-        </div>
-        <div class="form-group">
-          <label for="message">Message *</label>
-          <textarea id="message" name="message" placeholder="Your message" required></textarea>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-    <div class="info-section">
-      <h2>Email Me</h2>
-      <p>Email: <a href="rickygweth828@gmail.com">rickygweth828@gmail.com</a></p>
-      <p>Address: San Antonio, US</p>
-      <li>
-        <a href="https://www.instagram.com/asaprickiy/" target="_blank">
-             <i class="fa-brands fa-instagram" style="color: #74C0FC;"></i>
-        </a>
 
-        <a href="https://github.com/rickygweth" target="_blank">
-            <i class="fa-brands fa-github" style="color: #74C0FC;"></i>
-        </a>
-               
-                <i class="fa-brands fa-whatsapp" style="color: #74C0FC;"></i>
-                <i class="fa-brands fa-linkedin" style="color:  #74C0FC;"></i>
-                
-            </li>
-    </div>
-  </div>
+        <div class="info-section">
+          <h2>Email Me</h2>
+          <p>Email: <a href="mailto:rickygweth828@gmail.com">rickygweth828@gmail.com</a></p>
+          <p>Address: San Antonio, US</p>
+          <li>
+            <a href="https://www.instagram.com/asaprickiy/" target="_blank">
+              <i class="fa-brands fa-instagram" style="color: #74C0FC;"></i>
+            </a>
+            <a href="https://github.com/rickygweth" target="_blank">
+              <i class="fa-brands fa-github" style="color: #74C0FC;"></i>
+            </a>
+            <i class="fa-brands fa-whatsapp" style="color: #74C0FC;"></i>
+            <i class="fa-brands fa-linkedin" style="color: #74C0FC;"></i>
+          </li>
+        </div>
+      </div>
+    </ul>
+  </section>
 
-        </ul>
-    </section>
-    <footer>
-        <div class="footer">
-    © 2025 Ricky Gweth.  All Rights Reserved.
-  </div>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
 
+      emailjs.sendForm("your_service_ID", "your_template_ID", this) // 🔁 Replace with your actual Service ID & Template ID
+        .then(function (response) {
+          alert("✅ Message sent successfully!");
+          console.log("SUCCESS", response);
+        }, function (error) {
+          alert("❌ Failed to send message. Please try again.");
+          console.error("ERROR", error);
+        });
+    });
+  </script>
 
-    </footer>
+  <footer>
+    <div class="footer">© 2025 Ricky Gweth. All Rights Reserved.</div>
+  </footer>
 </body>
 </html>
