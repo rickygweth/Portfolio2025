@@ -11,12 +11,6 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function () {
-      emailjs.init("your_user_ID"); // 🔁 Replace with your actual user ID
-    })();
-  </script>
   <title>Ricky G</title>
 </head>
 
@@ -26,12 +20,13 @@
   <span></span>
   <span></span>
 </div>
+
 <div class="container">
-    <div class="docks">
-  <a href="aboutme.html"><button>About Me</button></a>
-  <a href="projects.html"><button>Projects</button></a>
-  <a href="certifications.html"><button>Certifications</button></a>
-</div>
+  <div class="docks" id="menu">
+    <a href="aboutme.html"><button>About Me</button></a>
+    <a href="projects.html"><button>Projects</button></a>
+    <a href="certifications.html"><button>Certifications</button></a>
+  </div>
 </div>
 
     <section>
@@ -172,7 +167,9 @@
             <a href="https://github.com/rickygweth" target="_blank">
               <i class="fa-brands fa-github" style="color: #74C0FC;"></i>
             </a>
-            <i class="fa-brands fa-whatsapp" style="color: #74C0FC;"></i>
+            <a href="https://wa.me/+12105944826? text=Hello Ricky,Here from your portfolio!" target="_blank">
+              <i class="fa-brands fa-whatsapp" style="color: #74C0FC;"></i>
+            </a>
             <i class="fa-brands fa-linkedin" style="color: #74C0FC;"></i>
           </li>
         </div>
@@ -181,22 +178,86 @@
   </section>
 
   <script>
-    document.getElementById("contact-form").addEventListener("submit", function (e) {
-      e.preventDefault();
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('active');
+}
 
-      emailjs.sendForm("your_service_ID", "your_template_ID", this) // 🔁 Replace with your actual Service ID & Template ID
-        .then(function (response) {
-          alert("✅ Message sent successfully!");
-          console.log("SUCCESS", response);
-        }, function (error) {
-          alert("❌ Failed to send message. Please try again.");
-          console.error("ERROR", error);
-        });
+function showNotification(message, type = 'success') {
+  // Remove existing notification
+  const existingNotification = document.querySelector('.notification');
+  if (existingNotification) {
+    existingNotification.remove();
+  }
+
+  // Create new notification
+  const notification = document.createElement('div');
+  notification.className = `notification ${type}`;
+  notification.textContent = message;
+  document.body.appendChild(notification);
+
+  // Show notification
+  setTimeout(() => notification.classList.add('show'), 100);
+
+  // Hide notification after 5 seconds
+  setTimeout(() => {
+    notification.classList.remove('show');
+    setTimeout(() => notification.remove(), 300);
+  }, 5000);
+}
+
+// Handle contact form submission
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const submitButton = this.querySelector('button[type="submit"]');
+  const originalText = submitButton.textContent;
+  
+  // Disable button and show loading state
+  submitButton.disabled = true;
+  submitButton.textContent = 'Sending...';
+  
+  // Get form data
+  const formData = {
+    firstName: document.getElementById('firstName').value,
+    lastName: document.getElementById('lastName').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    message: document.getElementById('message').value
+  };
+  
+  try {
+    const response = await fetch('contact.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
     });
-  </script>
+    
+    const result = await response.json();
+    
+    if (result.success) {
+      showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+      this.reset(); // Clear the form
+    } else {
+      showNotification(result.message || 'Sorry, there was an error sending your message.', 'error');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    showNotification('Sorry, there was an error sending your message. Please try again later.', 'error');
+  } finally {
+    // Re-enable button
+    submitButton.disabled = false;
+    submitButton.textContent = originalText;
+  }
+});
+</script>
 
   <footer>
     <div class="footer">© 2025 Ricky Gweth. All Rights Reserved.</div>
   </footer>
 </body>
 </html>
+
+
